@@ -6,11 +6,11 @@ export const useSurvey = () => useContext(SurveyContext);
 
 export const SurveyProvider = ({ children }) => {
   const [answers, setAnswers] = useState({});
-  const [gender, setGender] = useState("");  // Состояние для пола
-  const [age, setAge] = useState("");  // Состояние для возраста
+  const [gender, setGender] = useState("");  
+  const [age, setAge] = useState("");  
 
   const updateAnswer = (question, value) => {
-    const parsedValue = parseFloat(value) || 0; // Убедитесь, что значения корректны
+    const parsedValue = parseFloat(value) || 0; 
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
       [question]: parsedValue,
@@ -40,10 +40,10 @@ export const SurveyProvider = ({ children }) => {
         updateAnswer,
         calculateScore,
         totalScore,
-        gender,  // Пол
-        age,  // Возраст
-        setGender,  // Функция для установки пола
-        setAge,  // Функция для установки возраста
+        gender, 
+        age,  
+        setGender, 
+        setAge,  
         getRiskLevelText
       }}
     >

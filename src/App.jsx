@@ -2,14 +2,14 @@ import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import HealthTest from "./pages/HealthTest";
 import GenderAgeForm from "./pages/GenderAgeForm";
-import Results from "./pages/Results"; // Импортируем компонент Results
-import { SurveyProvider } from "./context/SurveyContext"; // Импортируем контекст
+import Results from "./pages/Results"; 
+import { SurveyProvider } from "./context/SurveyContext"; 
 
 function App() {
   return (
     <SurveyProvider>
       <Routes>
-        {/* Главная страница */}
+
         <Route
           path="/"
           element={
@@ -19,11 +19,9 @@ function App() {
             </div>
           }
         />
-        {/* Страница ввода пола и возраста */}
+
         <Route path="/test" element={<GenderAgeForm />} />
-        {/* Страница с основным тестом */}
         <Route path="/health-test" element={<HealthTest />} />
-        {/* Страница с результатами */}
         <Route path="/results" element={<Results />} />
       </Routes>
     </SurveyProvider>

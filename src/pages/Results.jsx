@@ -1,11 +1,11 @@
 import React from "react";
-import { useSurvey } from "../context/SurveyContext"; // Подключаем контекст
-import ProgressBar from "../components/ProgressBar"; // Импортируем прогресс-бар
+import { useSurvey } from "../context/SurveyContext"; 
+import ProgressBar from "../components/ProgressBar"; 
 import "./Results.css";
 
 const Results = () => {
-  const { totalScore, getRiskLevelText, gender, age } = useSurvey(); // Получаем данные из контекста
-  const MAX_SCORE = 52.5; // Максимальный балл
+  const { totalScore, getRiskLevelText, gender, age } = useSurvey(); 
+  const MAX_SCORE = 52.5; 
 
   return (
     <div className="resultStyle" style={{ textAlign: "center" }}>
@@ -15,10 +15,6 @@ const Results = () => {
       <p>Общее количество баллов: {totalScore.toFixed(2)} из {MAX_SCORE}</p>
       <p>{getRiskLevelText()}</p>
 
-      {/* <div>
-        <p>Пол: {gender}</p>
-        <p>Возраст: {age}</p>
-      </div> */}
     </div>
   );
 };

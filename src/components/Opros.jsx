@@ -8,26 +8,24 @@ const Opros = ({ name, type = "text", text }) => {
   const handleChange = (e) => {
     const value = e.target.value;
 
-    // Проверяем вводимые данные (числа и точка)
     if (/^\d*\.?\d*$/.test(value)) {
-      setError(false); // Убираем ошибку, если значение корректное
+      setError(false); 
       updateAnswer(name, value);
     } else {
-      setError(true); // Устанавливаем ошибку, если ввод некорректный
+      setError(true); 
     }
   };
 
   const handleKeyDown = (e) => {
-    // Разрешаем ввод только чисел, точки и функциональных клавиш
     if (
       !(
-        (e.key >= "0" && e.key <= "9") || // Цифры
-        e.key === "." || // Точка
+        (e.key >= "0" && e.key <= "9") || 
+        e.key === "." || 
         ["Backspace", "Delete", "Tab", "Enter", "ArrowLeft", "ArrowRight"].includes(e.key)
       )
     ) {
       e.preventDefault();
-      setError(true); // Показать ошибку при вводе недопустимого символа
+      setError(true); 
     }
   };
 
@@ -40,7 +38,7 @@ const Opros = ({ name, type = "text", text }) => {
           placeholder={text}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
-          inputMode="decimal" // Показывает числовую клавиатуру с точкой на мобильных устройствах
+          inputMode="decimal" 
           className={error ? "input-error" : ""}
         />
         {error && (

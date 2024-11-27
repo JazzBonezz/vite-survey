@@ -15,9 +15,9 @@ const GenderAgeForm = () => {
       return;
     }
 
-    setGender(localGender);  // Обновляем данные в контексте
-    setAge(localAge);  // Обновляем данные в контексте
-    navigate("/health-test");  // Переход на страницу с тестом
+    setGender(localGender);  
+    setAge(localAge);  
+    navigate("/health-test");  
   };
 
   return (
@@ -31,7 +31,6 @@ const GenderAgeForm = () => {
               <option value="">Выберите</option>
               <option value="male">Мужской</option>
               <option value="female">Женский</option>
-              <option value="other">Другое</option>
             </select>
           </label>
         </div>

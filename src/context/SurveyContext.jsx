@@ -10,15 +10,17 @@ export const SurveyProvider = ({ children }) => {
   const [age, setAge] = useState("");  // Состояние для возраста
 
   const updateAnswer = (question, value) => {
-    const parsedValue = parseFloat(value) || 0; // Преобразование в число или 0
-    const updatedAnswers = { ...answers, [question]: parsedValue };
-    setAnswers(updatedAnswers); // Обновление состояния
+    const parsedValue = parseFloat(value) || 0; // Убедитесь, что значения корректны
+    setAnswers((prevAnswers) => ({
+      ...prevAnswers,
+      [question]: parsedValue,
+    }));
   };
 
   const calculateScore = () =>
-    Object.values(answers).reduce((total, value) => total + (value || 0), 0); // Учитываем пустые значения как 0
-
-  const totalScore = calculateScore();
+    Object.values(answers).reduce((total, value) => total + (value || 0), 0);
+  
+  const totalScore = React.useMemo(() => calculateScore(), [answers]);
 
   const getRiskLevelText = () => {
     const percentage = (totalScore / 52.5) * 100;

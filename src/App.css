@@ -1,0 +1,125 @@
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Контейнер */
+div {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+/* Заголовки */
+h1 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+
+h3 {
+  color: #555;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+/* Вопросы */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Input и Select */
+input[type="text"],
+input[type="number"],
+select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Чекбоксы */
+label {
+  font-size: 1rem;
+  margin-left: 5px;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 10px;
+}
+
+/* Кнопка отправки */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+.welcomePage {
+  height: 90dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.welcome-h1 {
+  font-size: 40px;
+}
+
+.testLink {
+  color: #fff;
+  background-color: #007bff;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.testLink:hover {
+  background-color: #0056b3;
+}
